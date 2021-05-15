@@ -18,8 +18,8 @@ function Form() {
     { value: "portugal", text: "Portugal" }
   ];
   return (
-    <form className="space" style={{backgroundColor: "black"}}>
-      <SelectCountry  />
+    <form className="space" >
+      <SelectCountry batata={selectValues} />
     </form>
   );
 }

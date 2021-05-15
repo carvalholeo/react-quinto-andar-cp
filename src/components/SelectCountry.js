@@ -1,11 +1,22 @@
+import {useState, useEffect} from 'react';
 import tipagem from 'prop-types';
 
 function SelectCountry(props) {
-  const batata = props.batata
+  const [pais, setPais] = useState('0');
+  const batata = props.batata;
+
+  useEffect(() => {
+    console.log(pais)
+  }, [pais])
   return (
     <>
       <label htmlFor="id-pais">Selecione o país</label>
-      <select id="id-pais" name="pais" defaultValue="0">
+      <select
+        id="id-pais"
+        name="pais"
+        value={pais}
+        onChange={(e) => setPais(e.target.value)}
+      >
         <option value="0" disabled>Selecione</option>
         {
           batata.map((item, index) => {
